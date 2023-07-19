@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{794DF854-A407-4CDB-8F69-F59009E80701}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SeleniumController.cs">
+    <Files>
+      <File FileName="SeleniumHelper.cs" Line="39" Column="48" />
+      <File FileName="State.cs" Line="1" Column="1" />
+      <File FileName="Context.cs" Line="17" Column="10" />
+      <File FileName="Google.cs" Line="13" Column="50" />
+      <File FileName="Config.cs" Line="9" Column="2" />
+      <File FileName="Data.cs" Line="15" Column="49" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="Extensions.cs" Line="1" Column="1" />
+      <File FileName="SeleniumController.cs" Line="39" Column="53" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="State_Slave" expanded="True">
+            <Node name="State_Slave" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="SeleniumController.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.State__Slave PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
