@@ -4,7 +4,6 @@ using System.Text;
 
 namespace Slave
 {
-    
     class Program
     {
         static void Main(string[] args)

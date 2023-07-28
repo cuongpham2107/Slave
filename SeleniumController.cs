@@ -74,11 +74,7 @@ namespace Slave
             driver.Manage().Window.Size = new System.Drawing.Size(450, 450);
 
             // Tạo đối tượng Context và đặt các giá trị cần thiết vào Data
-            var context = new Context
-            {
-                Driver = driver,
-                Data = new Data(email, password, timeToWatchVideo, keywords, channels, urls, comments, icons,script),
-            };
+            var context = new Context(driver, new Data(email, password, timeToWatchVideo, keywords, channels, urls, comments, icons, script));
             //context.ExecuteState();
             while (true)
             {

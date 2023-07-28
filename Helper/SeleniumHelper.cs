@@ -54,11 +54,18 @@ namespace Slave
                 EnterPassword(password);
                 try
                 {
-                    actions.MoveToElement(elementCheckLogin).Click().Perform();
-                    Extensions.WriteLine("Đăng nhập Google thành công", ConsoleColor.DarkMagenta);
-                    ((IJavaScriptExecutor)driver).ExecuteScript("window.open();");
-                    driver.SwitchTo().Window(driver.WindowHandles.Last());
-                    return true;
+                    if (driver.Url.Contains("myaccount"))
+                    {
+                        Extensions.WriteLine("Đăng nhập Google thành công", ConsoleColor.DarkMagenta);
+                        ((IJavaScriptExecutor)driver).ExecuteScript("window.open();");
+                        driver.SwitchTo().Window(driver.WindowHandles.Last());
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                   
                 }
                 catch (NoSuchElementException)
                 {
@@ -73,11 +80,17 @@ namespace Slave
                 EnterPassword(password);
                 try
                 {
-                    actions.MoveToElement(elementCheckLogin).Click().Perform();
-                    Extensions.WriteLine("Đăng nhập Google thành công", ConsoleColor.DarkMagenta);
-                    ((IJavaScriptExecutor)driver).ExecuteScript("window.open();");
-                    driver.SwitchTo().Window(driver.WindowHandles.Last());
-                    return true;
+                    if (driver.Url.Contains("myaccount"))
+                    {
+                        Extensions.WriteLine("Đăng nhập Google thành công", ConsoleColor.DarkMagenta);
+                        ((IJavaScriptExecutor)driver).ExecuteScript("window.open();");
+                        driver.SwitchTo().Window(driver.WindowHandles.Last());
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 catch (NoSuchElementException)
                 {

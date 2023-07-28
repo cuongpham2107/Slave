@@ -14,7 +14,9 @@ namespace Slave
             s.GoToUrl("http://accounts.google.com");
             bool checkLogin = s.LoginGoogle(email, password);
             if(checkLogin){
-                context.SetState(new VideoSearchYoutobe());
+                //context.SetState(new VideoSearchYoutobe());
+                Console.WriteLine("Chuyen sang trang thai tim kiem video");
+                
             }
             else{
                 //Post Api thong bao loi dang nhap google
