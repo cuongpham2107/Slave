@@ -253,7 +253,7 @@ namespace Slave
         }
         public void PlayingVideo(int timeToWatchVideo)
         {
-            Thread.Sleep(TimeSpan.FromMinutes(timeToWatchVideo));
+            Thread.Sleep(TimeSpan.FromSeconds(timeToWatchVideo));
         }
         public void LikeVideo()
         {

@@ -9,14 +9,14 @@ namespace Slave
 {
 	class SeleniumController
 	{
-        static ConfigChrome _config = ConfigManager<ConfigChrome>.Instance.Config;
-        [Route("test")]
-		public static void Run()
+        ConfigChrome _config = ConfigManager<ConfigChrome>.Instance.Config;
+        [Route("run")]
+		public void Run()
 		{
             string email = "quynhdonghy2001@gmail.com";
             string password = "Cuonggiun1";
             string profileId = "64b7a5f105cb2d2f16fdd1cb";
-            int timeToWatchVideo = 2;
+            int timeToWatchVideo = 10;
             string[] keywords = {
                 "Tạo Bảng Chấm công và Chấm công với danh sách nhân viên, Tạo và Cập nhập Object sử dụng Devexpress",
                 "Phần mềm quản lý - Sử dụng Devexpress XAF, Build 2 nền tảng Web và Win cùng 1 code logic",
@@ -61,7 +61,7 @@ namespace Slave
                 ";-) ;)",
                 ":-O"
             };
-            int script = 1;
+            string script = "urls";
             //Data data = new Data(email, password, timeToWatchVideo,keywords, urls, channels, comments,icons);
             ChromeOptions options = new ChromeOptions();
             options.BinaryLocation = _config.BinaryLocation;
@@ -73,14 +73,33 @@ namespace Slave
             driver.Manage().Window.Position = new System.Drawing.Point(0, 0);
             driver.Manage().Window.Size = new System.Drawing.Size(450, 450);
 
-            // Tạo đối tượng Context và đặt các giá trị cần thiết vào Data
-            var context = new Context(driver, new Data(email, password, timeToWatchVideo, keywords, channels, urls, comments, icons, script));
-            //context.ExecuteState();
-            while (true)
+            List<Keywords> listKeywords = new List<Keywords>();
+            foreach (string keyword in keywords)
             {
-                context.ExecuteState();
+                listKeywords.Add(new Keywords
+                {
+                    Keyword = keyword,
+                    Status = 0 
+                });
             }
+
+            // Tạo đối tượng Context và đặt các giá trị cần thiết vào Data
+            var context = new Context(driver, new Data(email, password, timeToWatchVideo, listKeywords, channels, urls, comments, icons));
+            //context.ExecuteState();
+          
+                while (true)
+                {
+                    if(script == "channels"){
+                        context.ScriptChannelsState();
+                    }
+                    else if(script == "urls"){
+                         context.ScriptUrlsState();
+                    }
+                }
+            
+           
         }
-	}
+        
+    }
 }
 
