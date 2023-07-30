@@ -14,6 +14,7 @@ namespace Slave
         Actions actions;
         WebDriverWait wait => new WebDriverWait(driver, TimeSpan.FromSeconds(50));
         #region elementGoogle
+        
         IWebElement emailTextBox => wait.Until(driver => driver.FindElement(By.Id(_configGoole.InputEmailGoogle)));
         IWebElement passWordTextBox => wait.Until(driver => driver.FindElement(By.Name(_configGoole.IntputPasswordGooogle)));
         IWebElement elementChooseUser => wait.Until(driver => driver.FindElement(By.ClassName(_configGoole.ChooseUserGoogle)));
@@ -37,6 +38,7 @@ namespace Slave
         {
             this.driver = driver;
             this.actions = new Actions(driver);
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException),typeof(ElementNotInteractableException));
         }
         public void GoToUrl(string url)
         {
